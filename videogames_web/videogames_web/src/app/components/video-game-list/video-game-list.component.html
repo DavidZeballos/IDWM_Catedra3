@@ -1,0 +1,9 @@
+<p>Lista de Videojuegos</p>
+<ul>
+    <li *ngFor="let videoGame of videoGames">
+        {{ videoGame.name }} - {{ videoGame.description }} - {{ videoGame.platform }} - {{ videoGame.price }} - {{ videoGame.releaseDate }}
+        <button (click)="deleteVideoGame(videoGame.id)"></button>
+        <a [routerLink]="['/edit', videoGame.id]">Edit</a>
+    </li>
+</ul>
+<a [routerLink]="['/create']">Create</a>
